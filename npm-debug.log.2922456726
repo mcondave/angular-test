@@ -1,0 +1,39 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'c:\\Program Files\\nodejs\\node.exe',
+1 verbose cli   'C:\\Users\\mike\\AppData\\Roaming\\npm\\node_modules\\npm\\bin\\npm-cli.js',
+1 verbose cli   'start' ]
+2 info using npm@3.10.9
+3 info using node@v6.10.2
+4 verbose run-script [ 'prestart', 'start', 'poststart' ]
+5 info lifecycle angular-phonecat@0.0.0~prestart: angular-phonecat@0.0.0
+6 verbose lifecycle angular-phonecat@0.0.0~prestart: unsafe-perm in lifecycle true
+7 verbose lifecycle angular-phonecat@0.0.0~prestart: PATH: C:\Users\mike\AppData\Roaming\npm\node_modules\npm\bin\node-gyp-bin;c:\users\mike\documents\angular-phonecat\node_modules\.bin;f:\bin;.;C:\Program Files (x86)\Git\local\bin;C:\Program Files (x86)\Git\mingw\bin;C:\Program Files (x86)\Git\bin;c:\wamp\bin\perl\site\bin;c:\wamp\bin\perl\bin;c:\ProgramData\Oracle\Java\javapath;c:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;c:\Program Files (x86)\Intel\iCLS Client\;c:\Program Files\Intel\iCLS Client\;c:\Windows\system32;c:\Windows;c:\Windows\System32\Wbem;c:\Windows\System32\WindowsPowerShell\v1.0\;c:\Program Files\Intel\Intel(R) Management Engine Components\DAL;c:\Program Files (x86)\Intel\Intel(R) Management Engine Components\DAL;c:\Program Files\Intel\Intel(R) Management Engine Components\IPT;c:\Program Files (x86)\Intel\Intel(R) Management Engine Components\IPT;c:\Program Files (x86)\Common Files\lenovo\easyplussdk\bin;c:\Program Files (x86)\Common Files\Lenovo;c:\ProgramData\Lenovo\ReadyApps;c:\Program Files (x86)\Windows Kits\8.1\Windows Performance Toolkit\;c:\Program Files\Microsoft SQL Server\110\Tools\Binn\;c:\Program Files (x86)\Microsoft SDKs\TypeScript\1.0\;c:\Program Files\Microsoft SQL Server\120\Tools\Binn\;c:\HashiCorp\Vagrant\bin;c:\Program Files\nodejs\;c:\Program Files (x86)\Java\jre1.8.0_71\bin;c:\wamp\bin\php\php5.5.12;c:\ProgramData\ComposerSetup\bin;c:\wamp\bin\apache\apache2.4.9\bin;c:\Users\mike\AppData\Local\Programs\Python\Python35-32\Scripts\;c:\Users\mike\AppData\Local\Programs\Python\Python35-32\;c:\Users\mike\AppData\Roaming\npm;c:\wamp\bin\apache\apache2.4.9\bin;c:\Users\mike\AppData\Roaming\Composer\vendor\bin;c:\Users\mike\Documents\spark-installer;c:\Users\mike\Documents\phantomjs-2.1.1-windows\bin;c:\Users\mike\Documents\Chromedriver;.
+8 verbose lifecycle angular-phonecat@0.0.0~prestart: CWD: c:\users\mike\documents\angular-phonecat
+9 silly lifecycle angular-phonecat@0.0.0~prestart: Args: [ '/d /s /c', 'npm install' ]
+10 silly lifecycle angular-phonecat@0.0.0~prestart: Returned: code: 0  signal: null
+11 info lifecycle angular-phonecat@0.0.0~start: angular-phonecat@0.0.0
+12 verbose lifecycle angular-phonecat@0.0.0~start: unsafe-perm in lifecycle true
+13 verbose lifecycle angular-phonecat@0.0.0~start: PATH: C:\Users\mike\AppData\Roaming\npm\node_modules\npm\bin\node-gyp-bin;c:\users\mike\documents\angular-phonecat\node_modules\.bin;f:\bin;.;C:\Program Files (x86)\Git\local\bin;C:\Program Files (x86)\Git\mingw\bin;C:\Program Files (x86)\Git\bin;c:\wamp\bin\perl\site\bin;c:\wamp\bin\perl\bin;c:\ProgramData\Oracle\Java\javapath;c:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;c:\Program Files (x86)\Intel\iCLS Client\;c:\Program Files\Intel\iCLS Client\;c:\Windows\system32;c:\Windows;c:\Windows\System32\Wbem;c:\Windows\System32\WindowsPowerShell\v1.0\;c:\Program Files\Intel\Intel(R) Management Engine Components\DAL;c:\Program Files (x86)\Intel\Intel(R) Management Engine Components\DAL;c:\Program Files\Intel\Intel(R) Management Engine Components\IPT;c:\Program Files (x86)\Intel\Intel(R) Management Engine Components\IPT;c:\Program Files (x86)\Common Files\lenovo\easyplussdk\bin;c:\Program Files (x86)\Common Files\Lenovo;c:\ProgramData\Lenovo\ReadyApps;c:\Program Files (x86)\Windows Kits\8.1\Windows Performance Toolkit\;c:\Program Files\Microsoft SQL Server\110\Tools\Binn\;c:\Program Files (x86)\Microsoft SDKs\TypeScript\1.0\;c:\Program Files\Microsoft SQL Server\120\Tools\Binn\;c:\HashiCorp\Vagrant\bin;c:\Program Files\nodejs\;c:\Program Files (x86)\Java\jre1.8.0_71\bin;c:\wamp\bin\php\php5.5.12;c:\ProgramData\ComposerSetup\bin;c:\wamp\bin\apache\apache2.4.9\bin;c:\Users\mike\AppData\Local\Programs\Python\Python35-32\Scripts\;c:\Users\mike\AppData\Local\Programs\Python\Python35-32\;c:\Users\mike\AppData\Roaming\npm;c:\wamp\bin\apache\apache2.4.9\bin;c:\Users\mike\AppData\Roaming\Composer\vendor\bin;c:\Users\mike\Documents\spark-installer;c:\Users\mike\Documents\phantomjs-2.1.1-windows\bin;c:\Users\mike\Documents\Chromedriver;.
+14 verbose lifecycle angular-phonecat@0.0.0~start: CWD: c:\users\mike\documents\angular-phonecat
+15 silly lifecycle angular-phonecat@0.0.0~start: Args: [ '/d /s /c', 'http-server ./app -a localhost -p 8000 -c-1' ]
+16 verbose stack Error: kill ENOSYS
+16 verbose stack     at exports._errnoException (util.js:1018:11)
+16 verbose stack     at process.kill (internal/process.js:190:13)
+16 verbose stack     at process.listener (C:\Users\mike\AppData\Roaming\npm\node_modules\npm\node_modules\npmlog\node_modules\gauge\node_modules\signal-exit\index.js:86:15)
+16 verbose stack     at emitNone (events.js:91:20)
+16 verbose stack     at process.emit (events.js:185:7)
+16 verbose stack     at processEmit (C:\Users\mike\AppData\Roaming\npm\node_modules\npm\node_modules\npmlog\node_modules\gauge\node_modules\signal-exit\index.js:146:32)
+16 verbose stack     at processEmit (C:\Users\mike\AppData\Roaming\npm\node_modules\npm\node_modules\npm-registry-client\node_modules\npmlog\node_modules\gauge\node_modules\signal-exit\index.js:146:32)
+16 verbose stack     at Signal.wrap.onsignal (internal/process.js:217:44)
+17 verbose cwd c:\users\mike\documents\angular-phonecat
+18 error Windows_NT 6.1.7601
+19 error argv "c:\\Program Files\\nodejs\\node.exe" "C:\\Users\\mike\\AppData\\Roaming\\npm\\node_modules\\npm\\bin\\npm-cli.js" "start"
+20 error node v6.10.2
+21 error npm  v3.10.9
+22 error code ENOSYS
+23 error errno ENOSYS
+24 error syscall kill
+25 error kill ENOSYS
+26 error If you need help, you may report this error at:
+26 error     <https://github.com/npm/npm/issues>
+27 verbose exit [ 1, true ]
