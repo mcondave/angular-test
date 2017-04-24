@@ -7,14 +7,36 @@ describe('albumList', function() {
 
 	// Test the controller
 	describe('AlbumListController', function() {
-		var ctrl;
+		var $httpBackend, ctrl;
 
-		beforeEach(inject(function($componentController) {
-	      ctrl = $componentController('albumList');
+		// Inject the `mock` $http service into each test
+		beforeEach(inject(function($componentController, _$httpBackend_) {
+			$httpBackend = _$httpBackend_;
+			$httpBackend.expectGET('albums/albums.json')
+						.respond(
+							[
+								{title: 'Power, Corruption, and Lies'},
+								{title: 'Stereochrome'},
+								{title: 'TNT'},
+								{title: 'We Are The Lazer Viking'}
+							]
+						);
+	      	ctrl = $componentController('albumList');
 	    }));
 
+		// Make sure the list doesn't exist until we flush the http request
 		it('should create an `albums` model with 4 albums', function() {
-			expect(ctrl.albums.length).toBe(4);
+			expect(ctrl.albums).toBeUndefined();
+
+			$httpBackend.flush();
+			expect(ctrl.albums).toEqual(
+				[
+					{title: 'Power, Corruption, and Lies'},
+					{title: 'Stereochrome'},
+					{title: 'TNT'},
+					{title: 'We Are The Lazer Viking'}
+				]
+			);
 		});
 
 		it('should set a default value for the `orderProp` model', function() {

@@ -15,14 +15,14 @@ describe('PhoneCat Application', function() {
       var phoneList = element.all(by.repeater('phone in $ctrl.phones'));
       var query = element(by.model('$ctrl.query'));
 
-      expect(phoneList.count()).toBe(3);
+      expect(phoneList.count()).toBe(20);
 
       query.sendKeys('nexus');
       expect(phoneList.count()).toBe(1);
 
       query.clear();
       query.sendKeys('motorola');
-      expect(phoneList.count()).toBe(2);
+      expect(phoneList.count()).toBe(8);
     });
 
     it('should be possible to control phone order via the drop-down menu', function() {
@@ -51,39 +51,6 @@ describe('PhoneCat Application', function() {
         'Motorola XOOM\u2122 with Wi-Fi'
       ]);
     });
-
-  });
-
-  describe('albumList', function() {
-
-    it('should be possible to control album order via the drop-down menu', function() {
-      var queryField = element(by.model('$ctrl.query'));
-      var orderSelect = element(by.model('$ctrl.orderProp'));
-      var nameOption = orderSelect.element(by.css('option[value="name"]'));
-
-      function getNames() {
-          return albumNameColumn.map(function(elem) {
-            return elem.getText();
-          });
-      }
-    });
-
-    queryField.sendKeys('album'); // Narrow the dataset to make assertions shorter
-
-    expect(getNames()).toEqual([
-      'Power, Corruption, and Lies',
-      'Stereochrome'
-    ]);
-
-    queryField.clear();
-    nameOption.click();
-
-    expect(getNames()).toEqual([
-      'Power, Corruption, and Lies',
-      'Stereochrome',
-      'TNT',
-      'We Are The Lazer Viking'
-    ]);
 
   });
 
