@@ -22,10 +22,10 @@
 
 		<ul class="albums">
 			<li ng-repeat="album in $ctrl.albums | filter:$ctrl.query | orderBy:$ctrl.orderProp" class="thumbnail">
-				<a href="#/albums/{{album.id}}" class="thumb">
+				<a href="#!/albums/{{album.id}}" class="thumb">
           <img ng-src="{{album.coverArt}}" alt="{{album.title}}" />
         </a>
-        <a href="#/albums/{{album.id}}">{{album.title}}</a>
+        <a href="#!/albums/{{album.id}}">{{album.title}}</a>
 				<p>{{album.description}}</p>
 			</li>
 		</ul>

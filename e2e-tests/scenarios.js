@@ -5,10 +5,15 @@
 
 describe('PhoneCat Application', function() {
 
-  describe('phoneList', function() {
+  it('should redirect `index.html` to `index.html#!/phones', function() {
+    browser.get('index.html');
+    expect(browser.getLocationAbsUrl()).toBe('/phones');
+  });
+
+  describe('View: Phone list', function() {
 
     beforeEach(function() {
-      browser.get('index.html');
+      browser.get('index.html#!/phones');
     });
 
     it('should filter the phone list as a user types into the search box', function() {
@@ -62,17 +67,27 @@ describe('PhoneCat Application', function() {
 
   });
 
-  describe('albumList', function() {
+  describe('View: Phone detail', function() {
 
+    beforeEach(function() {
+      browser.get('index.html#!/phones/nexus-s');
+    });
+
+    it('should display placeholder page with `phoneId`', function() {
+      expect(element(by.binding('$ctrl.phoneId')).getText()).toBe('nexus-s');
+    });
+
+  });
+
+  describe('View: Album List', function() {
     // Inject this
     beforeEach(function() {
-      browser.get('index.html');
+      browser.get('index.html#!/albums');
     });
 
     it('should be possible to control album order via the drop-down menu', function() {
-      // Use all all and .last() to get the second controller element since we have two controllers on one page
-      var queryField = element.all(by.model('$ctrl.query')).last();
-      var orderSelect = element.all(by.model('$ctrl.orderProp')).last();
+      var queryField = element(by.model('$ctrl.query'));
+      var orderSelect = element(by.model('$ctrl.orderProp'));
       var titleOption = orderSelect.element(by.css('option[value="title"]'));
       var albumTitleColumn = element.all(by.repeater('album in $ctrl.albums').column('album.title'));
 
@@ -101,13 +116,23 @@ describe('PhoneCat Application', function() {
     });
 
     it('should render album specific links', function() {
-      var query = element.all(by.model('$ctrl.query')).last();
+      var query = element(by.model('$ctrl.query'));
       query.sendKeys('album');
 
       element.all(by.css('.albums li a')).first().click();
       expect(browser.getLocationAbsUrl()).toBe('/albums/new-order-power-corruption-lies');
     });
+  });
 
+  describe('View: Album details', function() {
+
+    beforeEach(function() {
+      browser.get('index.html#!/albums/new-order-power-corruption-lies');
+    });
+
+    it('should display placeholder page with `albumId`', function() {
+      expect(element(by.binding('$ctrl.albumId')).getText()).toBe('new-order-power-corruption-lies');
+    });
   });
 
 });
