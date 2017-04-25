@@ -5,14 +5,13 @@ angular.
   	module('albumList').
   	component('albumList', {
     	templateUrl: 'album-list/album-list.template.html',
-    	controller: [ '$http',
-            function AlbumListController($http) {
+    	controller: [ '$http', function AlbumListController($http) {
         		var self = this;
-                self.orderProp = 'release';
+            self.orderProp = 'release';
 
-                $http.get('albums/albums.json').then(function(response) {
-                    self.albums = response.data;
-                });
+            $http.get('albums/albums.json').then(function(response) {
+                self.albums = response.data;
+            });
         	}
         ]
-  	})
+  	});

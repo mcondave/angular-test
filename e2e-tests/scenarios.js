@@ -52,6 +52,62 @@ describe('PhoneCat Application', function() {
       ]);
     });
 
+    it('should render phone specific links', function() {
+      var query = element(by.model('$ctrl.query'));
+      query.sendKeys('nexus');
+
+      element.all(by.css('.phones li a')).first().click();
+      expect(browser.getLocationAbsUrl()).toBe('/phones/nexus-s');
+    });
+
+  });
+
+  describe('albumList', function() {
+
+    // Inject this
+    beforeEach(function() {
+      browser.get('index.html');
+    });
+
+    it('should be possible to control album order via the drop-down menu', function() {
+      // Use all all and .last() to get the second controller element since we have two controllers on one page
+      var queryField = element.all(by.model('$ctrl.query')).last();
+      var orderSelect = element.all(by.model('$ctrl.orderProp')).last();
+      var titleOption = orderSelect.element(by.css('option[value="title"]'));
+      var albumTitleColumn = element.all(by.repeater('album in $ctrl.albums').column('album.title'));
+
+      function getTitles() {
+          return albumTitleColumn.map(function(elem) {
+            return elem.getText();
+          });
+      }
+
+      queryField.sendKeys('album'); // Narrow the dataset to make assertions shorter
+
+      expect(getTitles()).toEqual([
+        'Power, Corruption, and Lies',
+        'Stereochrome'
+      ]);
+
+      queryField.clear();
+      titleOption.click();
+
+      expect(getTitles()).toEqual([
+        'Power, Corruption, and Lies',
+        'Stereochrome',
+        'TNT',
+        'We Are The Lazer Viking'
+      ]);
+    });
+
+    it('should render album specific links', function() {
+      var query = element.all(by.model('$ctrl.query')).last();
+      query.sendKeys('album');
+
+      element.all(by.css('.albums li a')).first().click();
+      expect(browser.getLocationAbsUrl()).toBe('/albums/new-order-power-corruption-lies');
+    });
+
   });
 
 });
